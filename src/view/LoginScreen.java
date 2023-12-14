@@ -8,15 +8,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class LoginScreen {
     private Scene scene;
 
-    public LoginScreen(){
-        initComponents();
+    public LoginScreen(Stage stage){
+        initComponents(stage);
     }
 
-    public void initComponents(){
+    public void initComponents(Stage stage){
         Label title = new Label("Welcome to StoreCS24");
 
         TextField userTxt = new TextField();
@@ -24,6 +25,11 @@ public class LoginScreen {
         PasswordField pswTxt = new PasswordField();
         pswTxt.setMaxWidth(200);
         Button signInBtn = new Button("SignIn");
+        signInBtn.setOnAction(e->{
+            HomeScreen homeScreen = new HomeScreen(stage);
+            stage.setScene(homeScreen.getScene());
+        });
+
         Button signUpBtn = new Button("SignUp");
 
         VBox mainBox = new VBox(10);

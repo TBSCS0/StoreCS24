@@ -12,7 +12,7 @@ public class Main extends Application {
         stage.setTitle("StoreCS24");
         stage.setHeight(600);
         stage.setWidth(600);
-        LoginScreen loginScreen = new LoginScreen();
+        LoginScreen loginScreen = new LoginScreen(stage);
         stage.setScene(loginScreen.getScene());
         stage.show();
     }
