@@ -2,7 +2,6 @@ package controller;
 
 import model.User;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -47,6 +46,5 @@ public class UserController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
