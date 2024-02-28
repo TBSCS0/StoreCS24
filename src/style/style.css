@@ -1,0 +1,16 @@
+#mainBox{
+    -fx-background: black;
+}
+
+.button {
+    -fx-background-color: #af4c95; /* Green */
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #af4c95; /* Darker green when hovered */
+}
+
+.button:pressed {
+    -fx-background-color: #af4c95; /* Even darker green when pressed */
+}

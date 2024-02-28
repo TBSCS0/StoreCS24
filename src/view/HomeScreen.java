@@ -38,8 +38,10 @@ public class HomeScreen {
 
         VBox mainBox = new VBox();
         mainBox.getChildren().addAll(table);
+        mainBox.setId("mainBox");
 
         scene = new Scene(mainBox);
+        scene.getStylesheets().add("./style/style.css");
     }
 
     public Scene getScene() {

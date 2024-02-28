@@ -34,6 +34,7 @@ public class LoginScreen {
 
         VBox mainBox = new VBox(10);
         mainBox.setAlignment(Pos.CENTER);
+        mainBox.setId("mainBox");
 
         HBox buttonsBox = new HBox(10);
         buttonsBox.getChildren().addAll(signInBtn, signUpBtn);
@@ -41,6 +42,7 @@ public class LoginScreen {
 
         mainBox.getChildren().addAll(title, userTxt, pswTxt, buttonsBox);
         scene = new Scene(mainBox);
+        scene.getStylesheets().add("./style/style.css");
     }
 
     public Scene getScene() {

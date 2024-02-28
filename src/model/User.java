@@ -2,10 +2,10 @@ package model;
 
 public class User {
     private String username;
-    private String password;
+    private int password;
     private String email;
 
-    public User(String username, String password, String email) {
+    public User(String username, int password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -19,11 +19,11 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
+    public int getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(int password) {
         this.password = password;
     }
 
