@@ -1,5 +1,6 @@
 package view;
 
+import controller.UserController;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,6 +32,9 @@ public class LoginScreen {
         });
 
         Button signUpBtn = new Button("SignUp");
+        signUpBtn.setOnAction(e->{
+            UserController userController = new UserController();
+        });
 
         VBox mainBox = new VBox(10);
         mainBox.setAlignment(Pos.CENTER);

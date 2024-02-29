@@ -14,9 +14,14 @@ public class UserController {
 
     public UserController(){
         users = new LinkedList<>();
+        read();
     }
 
-    public LinkedList<User> read(){
+    public LinkedList<User> getUsers() {
+        return users;
+    }
+
+    public void read(){
         try {
             FileReader fileReader = new FileReader("./data/users.csv");
             Scanner scanner = new Scanner(fileReader);
@@ -30,7 +35,6 @@ public class UserController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return users;
     }
 
     public void create(String username, int password, String email){
