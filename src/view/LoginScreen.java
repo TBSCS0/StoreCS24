@@ -13,8 +13,10 @@ import javafx.stage.Stage;
 
 public class LoginScreen {
     private Scene scene;
+    private UserController userController;
 
     public LoginScreen(Stage stage){
+        userController = new UserController();
         initComponents(stage);
     }
 
@@ -27,13 +29,15 @@ public class LoginScreen {
         pswTxt.setMaxWidth(200);
         Button signInBtn = new Button("SignIn");
         signInBtn.setOnAction(e->{
-            HomeScreen homeScreen = new HomeScreen(stage);
-            stage.setScene(homeScreen.getScene());
+            if(userController.read(userTxt.getText(), Integer.parseInt(pswTxt.getText()))){
+                HomeScreen homeScreen = new HomeScreen(stage);
+                stage.setScene(homeScreen.getScene());
+            }
         });
 
         Button signUpBtn = new Button("SignUp");
         signUpBtn.setOnAction(e->{
-            UserController userController = new UserController();
+
         });
 
         VBox mainBox = new VBox(10);

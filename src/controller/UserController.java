@@ -37,6 +37,16 @@ public class UserController {
         }
     }
 
+    public boolean read(String username, int password){
+        for (int i = 0; i < users.size(); i++) {
+            if (    users.get(i).getUsername().equals(username) &&
+                    users.get(i).getPassword() == password){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void create(String username, int password, String email){
         try {
             FileWriter fileWriter = new FileWriter("./data/users.csv", true);
