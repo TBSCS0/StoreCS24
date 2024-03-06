@@ -37,7 +37,11 @@ public class LoginScreen {
 
         Button signUpBtn = new Button("SignUp");
         signUpBtn.setOnAction(e->{
-
+            userController.create(
+                    userTxt.getText(),
+                    Integer.parseInt(pswTxt.getText()),
+                    "sample@email.com"
+            );
         });
 
         VBox mainBox = new VBox(10);
