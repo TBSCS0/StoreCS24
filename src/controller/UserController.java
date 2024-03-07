@@ -62,5 +62,36 @@ public class UserController {
         }
     }
 
+    public void update(String username, int password){
+        try {
+            FileWriter fileWriter = new FileWriter("./data/users.csv", false);
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getUsername().equals(username)){
+                    users.get(i).setPassword(password);
+                }
+                fileWriter.write(users.get(i).getUsername()+","+users.get(i).getPassword()+","+users.get(i).getEmail());
+                fileWriter.write(System.lineSeparator());
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void delete(String username){
+        try {
+            FileWriter fileWriter = new FileWriter("./data/users.csv", false);
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getUsername().equals(username)){
+                    users.set(i, null);
+                }else {
+                    fileWriter.write(users.get(i).getUsername() + "," + users.get(i).getPassword() + "," + users.get(i).getEmail());
+                    fileWriter.write(System.lineSeparator());
+                }
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

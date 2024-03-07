@@ -44,12 +44,22 @@ public class LoginScreen {
             );
         });
 
+        Button updateBtn = new Button("Update");
+        updateBtn.setOnAction(e->{
+            userController.update(userTxt.getText(), Integer.parseInt(pswTxt.getText()));
+        });
+
+        Button deleteBtn = new Button("Delete");
+        deleteBtn.setOnAction(e->{
+            userController.delete(userTxt.getText());
+        });
+
         VBox mainBox = new VBox(10);
         mainBox.setAlignment(Pos.CENTER);
         mainBox.setId("mainBox");
 
         HBox buttonsBox = new HBox(10);
-        buttonsBox.getChildren().addAll(signInBtn, signUpBtn);
+        buttonsBox.getChildren().addAll(signInBtn, signUpBtn, updateBtn, deleteBtn);
         buttonsBox.setAlignment(Pos.CENTER);
 
         mainBox.getChildren().addAll(title, userTxt, pswTxt, buttonsBox);
